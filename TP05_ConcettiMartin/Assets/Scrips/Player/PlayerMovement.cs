@@ -7,11 +7,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerBody;
 
     [SerializeField] private Collider2D groundCheck;
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private bool grounded;
 
     [SerializeField] private float speed = 1000;
     public float jump = 200;
+
+    public float move;
 
     void Start()
     {
@@ -20,27 +21,41 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float xInput = Input.GetAxis("Horizontal");
-        
-        if (Mathf.Abs(xInput) > 0) { 
-            playerBody.velocity = new Vector2(xInput * speed *Time.deltaTime, playerBody.velocity.y);
-        }
+        Movement();
+        Jump();
+    }
 
-        if (Input.GetButtonDown("Jump"))
+    private void Movement()
+    {
+        move = Input.GetAxis("Horizontal");
+
+       
+
+        playerBody.velocity = new Vector2(move * speed * Time.deltaTime, playerBody.velocity.y);
+    }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && grounded == false)
         {
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
         }
-        
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = false;
+        }
     }
 
-    void CheckGrounded()
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max,groundMask).Length > 0;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = true;
+        }
     }
+
 }
