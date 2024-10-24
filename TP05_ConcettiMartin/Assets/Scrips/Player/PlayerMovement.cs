@@ -10,8 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool grounded;
 
     [SerializeField] private float speed = 1000;
-    public float jump = 200;
 
+    public float jump = 200;
+    private bool _facingRight = true;
     public float move;
 
     void Start()
@@ -29,7 +30,14 @@ public class PlayerMovement : MonoBehaviour
     {
         move = Input.GetAxis("Horizontal");
 
-       
+        if (move > 0)
+        {
+            Flip();
+        }
+        else if (move < 0)
+        {
+            Flip();
+        }
 
         playerBody.velocity = new Vector2(move * speed * Time.deltaTime, playerBody.velocity.y);
     }
@@ -39,6 +47,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded == false)
         {
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
+        }
+    }
+
+    private void Flip()
+    {
+        if ((move < 0 && _facingRight) || (move > 0 && !_facingRight))
+        {
+            _facingRight = !_facingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
         }
     }
 
