@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 1000;
 
     public float jump = 200;
-    private bool _facingRight = true;
+    private bool facingRight = true;
     public float move;
 
     void Start()
@@ -52,9 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if ((move < 0 && _facingRight) || (move > 0 && !_facingRight))
+        if ((move < 0 && facingRight) || (move > 0 && !facingRight))
         {
-            _facingRight = !_facingRight;
+            facingRight = !facingRight;
             transform.Rotate(new Vector3(0, 180, 0));
         }
     }
