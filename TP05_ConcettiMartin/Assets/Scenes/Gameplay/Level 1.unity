@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b81d4225ed0784ebd6c2e3701dcbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
+  data: {fileID: 11400000, guid: 2c120e73367eb204eacdedbcea061143, type: 2}
 --- !u!114 &318840503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31fb1d4c5671874e86f512536cbcaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  data: {fileID: 11400000, guid: 2c120e73367eb204eacdedbcea061143, type: 2}
 --- !u!1 &453583837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,9 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 1414113634}
   grounded: 1
-  speed: 1500
-  jump: 400
-  move: 0
+  data: {fileID: 11400000, guid: 6179faa6e586c1a4081aa4a5014710cd, type: 2}
 --- !u!114 &1116473682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,7 +1657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966d248eeedb9e7488bb46c1e403395e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  data: {fileID: 11400000, guid: 6179faa6e586c1a4081aa4a5014710cd, type: 2}
 --- !u!95 &1116473683
 Animator:
   serializedVersion: 5

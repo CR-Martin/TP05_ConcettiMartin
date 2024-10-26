@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] int strength = 5;
+    [SerializeField] private EnemySO data;
+
+    int strength;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        strength=data.Strength;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

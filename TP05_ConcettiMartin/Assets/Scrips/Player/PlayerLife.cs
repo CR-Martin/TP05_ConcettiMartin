@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour , ITakeDamage
 {
-    [SerializeField] private int life;
 
-   
+    [SerializeField] private PlayerSO data;
+
+    private int life;
+
+    void Start()
+    {
+        life=data.Maxlife;
+    }
+
     public void TakeDamage(int strength)
     {
         life -= strength;

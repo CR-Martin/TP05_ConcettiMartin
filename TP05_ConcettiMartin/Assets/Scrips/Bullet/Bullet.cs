@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed = 20f;
+    [SerializeField] private BulletSO data;
+    private float velocity;
     private Rigidbody2D rb;
-    private int strength = 10;
+    private int strength;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        velocity = data.Velocity;
+        strength = data.Strength;
     }
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * velocity;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

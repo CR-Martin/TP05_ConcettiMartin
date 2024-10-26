@@ -9,15 +9,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D groundCheck;
     [SerializeField] private bool grounded;
 
-    [SerializeField] private float speed = 1000;
+    [SerializeField] private PlayerSO data;
 
-    public float jump = 200;
+    private float speed;
+    private float jump;
+
     private bool facingRight = true;
-    public float move;
+
+    private float move;
 
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
+        speed=data.MovementSpeed;
+        jump=data.JumpForce;
     }
 
     void Update()
