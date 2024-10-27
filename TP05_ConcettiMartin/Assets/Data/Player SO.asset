@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Player SO
   m_EditorClassIdentifier: 
   maxlife: 3
+  inmunityTime: 2
   movementSpeed: 1500
   jumpForce: 400

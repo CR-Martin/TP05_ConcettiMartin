@@ -16,6 +16,6 @@ public class EnemyDamage : MonoBehaviour
     {
         ITakeDamage hit = collision.gameObject.GetComponent<ITakeDamage>();
         hit.TakeDamage(strength);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
