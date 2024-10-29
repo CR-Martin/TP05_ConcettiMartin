@@ -7,7 +7,12 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
 
-   
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic("Main music");
+
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
