@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.ParticleSystem;
 
 public class EnemyLife : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private EnemySO data;
     [SerializeField] private Slider lifeBar;
-
+    [SerializeField] private GameObject deadParticles;
 
     private int life;
     void Start()
@@ -31,6 +32,8 @@ public class EnemyLife : MonoBehaviour, ITakeDamage
         Debug.Log(life);
         if (life <= 0)
         {
+            Instantiate(deadParticles, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
         UpdateHealthBar(life, data.Maxlife);
