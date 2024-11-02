@@ -49,9 +49,14 @@ MonoBehaviour:
   musicSounds:
   - soundName: Main music
     clip: {fileID: 8300000, guid: be998bf1ecb009f4f960d7f394787a0c, type: 3}
-  sfxSounds: []
+  sfxSounds:
+  - soundName: Hurt
+    clip: {fileID: 8300000, guid: a263bf8c63ceb8041aa50d1c6f523a65, type: 3}
+  - soundName: Explosion
+    clip: {fileID: 8300000, guid: fa89afd96488e434fa6dfa500c781537, type: 3}
   audioMixer: {fileID: 24100000, guid: 52ab09d5dc64af047b83b92d4a3cf305, type: 2}
   musicSource: {fileID: 399760700801677529}
+  sfxSource: {fileID: 5814564117828759119}
 --- !u!82 &399760700801677529
 AudioSource:
   m_ObjectHideFlags: 0

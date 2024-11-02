@@ -8,12 +8,16 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    [SerializeField] private Clip[] musicSounds, sfxSounds;
+    [SerializeField] private Clip[] musicSounds, effectSounds;
     [SerializeField] private AudioMixer audioMixer;
 
-    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource musicSource, effectSource;
 
     private string lastSong;
+    private float musicVolume;
+    private float EffectVolume;
+    private const string MixerMusic = "MusicVolume";
+    private const string MixerEffect = "EffectVolume";
 
     private void Awake()
     {
@@ -44,4 +48,27 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayEffect(string effectName)
+    {
+        Clip effect = Array.Find(effectSounds, x => x.soundName == effectName);
+        if (effect == null)
+        {
+            Debug.LogError("Effect not found");
+        }
+        else
+        {
+            effectSource.PlayOneShot(effect.clip);
+        }
+    }
+
+    public void MusicVolume(float volume)
+    {
+        musicVolume = volume;
+        audioMixer.SetFloat(MixerMusic, Mathf.Log10(volume) * 20);
+    }
+    public void SfxVolume(float volume)
+    {
+        EffectVolume = volume;
+        audioMixer.SetFloat(MixerEffect, Mathf.Log10(volume) * 20);
+    }
 }

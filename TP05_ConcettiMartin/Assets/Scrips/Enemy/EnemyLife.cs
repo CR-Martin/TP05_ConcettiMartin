@@ -27,13 +27,14 @@ public class EnemyLife : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int strength)
     {
+        AudioManager.Instance.PlayEffect("Hurt");
 
         life -= strength;
         Debug.Log(life);
         if (life <= 0)
         {
             Instantiate(deadParticles, transform.position, Quaternion.identity);
-
+            AudioManager.Instance.PlayEffect("Explosion");
             Destroy(gameObject);
         }
         UpdateHealthBar(life, data.Maxlife);
