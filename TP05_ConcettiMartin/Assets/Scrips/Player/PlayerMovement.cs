@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float speed;
     private float jump;
+    private bool canDoubleJump = true;
 
     private bool facingRight = true;
 
@@ -53,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
         }
+        if (Input.GetButtonDown("Jump") && grounded == true && canDoubleJump == true)
+        {
+            playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
+            canDoubleJump = false;
+        }
     }
 
     private void Flip()
@@ -69,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = false;
+            canDoubleJump = true;
         }
     }
 
