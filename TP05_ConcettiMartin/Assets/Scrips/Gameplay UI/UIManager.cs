@@ -6,7 +6,21 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject gameOverMenu;
+    [SerializeField] GameObject winMenu;
 
+    private void OnEnable()
+    {
+        GameManager.ActivateGameOver += GameOver;
+        GameManager.ActivateWinGame += WinGame;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.ActivateGameOver -= GameOver;
+        GameManager.ActivateWinGame -= WinGame;
+
+    }
     private void Start()
     {
         AudioManager.Instance.PlayMusic("Main music");
@@ -32,6 +46,18 @@ public class UIManager : MonoBehaviour
         {
             ResumeGameplay();
         }
+    }
+
+    private void GameOver()
+    {
+        SetTimeToZero();
+        gameOverMenu.SetActive(true);
+
+    }
+    private void WinGame()
+    {
+        SetTimeToZero();
+        winMenu.SetActive(true);
     }
 
     public void ChangeScene(string name)

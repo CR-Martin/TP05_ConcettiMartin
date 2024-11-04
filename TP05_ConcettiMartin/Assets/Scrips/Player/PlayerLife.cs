@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerLife : MonoBehaviour , ITakeDamage
 {
+    public static event Action OnGameOver;
 
     [SerializeField] private PlayerSO data;
     [SerializeField] private GameObject inmunityIndicator;
@@ -31,7 +33,7 @@ public class PlayerLife : MonoBehaviour , ITakeDamage
 
             if (life <= 0)
             {
-                Destroy(gameObject);
+                OnGameOver?.Invoke();
             }
 
             UpdateHealthBar(life, data.Maxlife);
