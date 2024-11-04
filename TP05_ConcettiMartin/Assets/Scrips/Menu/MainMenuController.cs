@@ -58,4 +58,10 @@ public class MainMenuController : MonoBehaviour
     {
         AudioManager.Instance.SfxVolume(value);
     }
+
+    public void Click()
+    {
+        AudioManager.Instance.PlayEffect("Click");
+
+    }
 }

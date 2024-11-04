@@ -28,8 +28,15 @@ public class Bullet : MonoBehaviour
         {
             hit.TakeDamage(strength);
         }
+        if (collision.gameObject.tag == "Enemy aim")
+        {
+            Debug.Log("enemy aim");
+        }
+        else
+        {
+            Destroy(gameObject);
 
-        Destroy(gameObject);
+        }
     }
 
 

@@ -33,6 +33,7 @@ public class PlayerLife : MonoBehaviour , ITakeDamage
 
             if (life <= 0)
             {
+                AudioManager.Instance.PlayEffect("Game Over");
                 OnGameOver?.Invoke();
             }
 

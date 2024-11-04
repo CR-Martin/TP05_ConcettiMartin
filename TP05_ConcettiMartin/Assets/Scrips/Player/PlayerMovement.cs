@@ -53,10 +53,12 @@ public class PlayerMovement : MonoBehaviour, IpowerUp
     {
         if (Input.GetButtonDown("Jump") && grounded == false)
         {
+            AudioManager.Instance.PlayEffect("Jump");
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
         }
         if (Input.GetButtonDown("Jump") && grounded == true && jumpPowerUp == true && canDoubleJump == true)
         {
+            AudioManager.Instance.PlayEffect("Jump");
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
             canDoubleJump = false;
         }

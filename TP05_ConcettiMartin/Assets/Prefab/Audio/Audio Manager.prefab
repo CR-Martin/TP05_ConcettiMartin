@@ -54,6 +54,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fa89afd96488e434fa6dfa500c781537, type: 3}
   - soundName: Hurt
     clip: {fileID: 8300000, guid: a263bf8c63ceb8041aa50d1c6f523a65, type: 3}
+  - soundName: Power up
+    clip: {fileID: 8300000, guid: 9788526562fab8047aeae49231921104, type: 3}
+  - soundName: Jump
+    clip: {fileID: 8300000, guid: 692341ea27e9fa744b3b8448a9484ddd, type: 3}
+  - soundName: Shooting
+    clip: {fileID: 8300000, guid: 40e936512279fca4e82d4053e185d3c0, type: 3}
+  - soundName: Click
+    clip: {fileID: 8300000, guid: 36618f21d61ccc647bf7737ece115d0f, type: 3}
+  - soundName: Game Over
+    clip: {fileID: 8300000, guid: 50dcbcdd6ad651c42b775335bd8dc948, type: 3}
   audioMixer: {fileID: 24100000, guid: 52ab09d5dc64af047b83b92d4a3cf305, type: 2}
   musicSource: {fileID: 399760700801677529}
   effectSource: {fileID: 5814564117828759119}

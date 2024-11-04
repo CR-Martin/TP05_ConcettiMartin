@@ -85,4 +85,10 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Click()
+    {
+        AudioManager.Instance.PlayEffect("Click");
+
+    }
 }
