@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifePickable : MonoBehaviour
+public class PowerUpPickable : MonoBehaviour
 {
-    [SerializeField] private LifePickableSO data;
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            ITakeDamage hit = other.gameObject.GetComponent<ITakeDamage>();
-            hit.TakeDamage(data.AmountOfLife);
+            IpowerUp hit = other.gameObject.GetComponent<IpowerUp>();
+            hit.ActivatePowerUp();
             Destroy(gameObject);
         }
     }

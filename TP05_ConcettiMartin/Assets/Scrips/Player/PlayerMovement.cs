@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IpowerUp
 {
     private Rigidbody2D playerBody;
 
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float speed;
     private float jump;
+    private bool jumpPowerUp = false;
     private bool canDoubleJump = true;
 
     private bool facingRight = true;
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
         }
-        if (Input.GetButtonDown("Jump") && grounded == true && canDoubleJump == true)
+        if (Input.GetButtonDown("Jump") && grounded == true && jumpPowerUp == true && canDoubleJump == true)
         {
             playerBody.AddForce(new Vector2(playerBody.velocity.x, jump));
             canDoubleJump = false;
@@ -85,6 +86,11 @@ public class PlayerMovement : MonoBehaviour
         {
             grounded = true;
         }
+    }
+
+    public void ActivatePowerUp()
+    {
+        jumpPowerUp = true;
     }
 
 }
