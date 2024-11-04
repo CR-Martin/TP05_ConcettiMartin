@@ -1247,8 +1247,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: -424611063, guid: 15a1e7d0c763dbe4cade15c435c69d8e, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -24017,8 +24017,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2bfd777a229660548b61dcd3a7d8753c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -24599,8 +24599,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2bfd777a229660548b61dcd3a7d8753c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -25825,8 +25825,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2bfd777a229660548b61dcd3a7d8753c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -26586,6 +26586,34 @@ PrefabInstance:
     - target: {fileID: 1679213904663161954, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9788526562fab8047aeae49231921104, type: 3}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 692341ea27e9fa744b3b8448a9484ddd, type: 3}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 40e936512279fca4e82d4053e185d3c0, type: 3}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.data[2].soundName
+      value: Power up
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.data[3].soundName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808328762867421825, guid: 69e6ea5dacbd1b34188429ddb58cbb85, type: 3}
+      propertyPath: effectSounds.Array.data[4].soundName
+      value: Shooting
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

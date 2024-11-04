@@ -18,6 +18,11 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (Time.timeScale == 1f)
+        {
+            AudioManager.Instance.PlayEffect("Shooting");
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+      
     }
 }

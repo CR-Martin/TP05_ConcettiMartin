@@ -29,7 +29,6 @@ public class PlayerLife : MonoBehaviour , ITakeDamage
 
             life -= strength;
 
-            Debug.Log(life);
             if (life <= 0)
             {
                 Destroy(gameObject);

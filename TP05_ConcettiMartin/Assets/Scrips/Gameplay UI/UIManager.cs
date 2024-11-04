@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangeScene(string name)
     {
+        SetTimeToOne();
         SceneManager.LoadScene(sceneName: name);
     }
 

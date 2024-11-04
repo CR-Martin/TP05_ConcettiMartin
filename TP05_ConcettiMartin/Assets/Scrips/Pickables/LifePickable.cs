@@ -11,6 +11,7 @@ public class LifePickable : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             ITakeDamage hit = other.gameObject.GetComponent<ITakeDamage>();
+            AudioManager.Instance.PlayEffect("Power up");
             hit.TakeDamage(data.AmountOfLife);
             Destroy(gameObject);
         }

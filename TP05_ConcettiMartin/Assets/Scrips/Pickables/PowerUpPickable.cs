@@ -9,6 +9,7 @@ public class PowerUpPickable : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             IpowerUp hit = other.gameObject.GetComponent<IpowerUp>();
+            AudioManager.Instance.PlayEffect("Power up");
             hit.ActivatePowerUp();
             Destroy(gameObject);
         }
