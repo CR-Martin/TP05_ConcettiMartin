@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bullet SO
   m_EditorClassIdentifier: 
   strength: 1
-  fireRate: 0
-  velocity: 20
-  lifeTime: 0
+  fireRate: 3
+  velocity: 5
+  lifeTime: 5
+  range: 4

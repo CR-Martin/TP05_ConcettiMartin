@@ -30,7 +30,6 @@ public class Bullet : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy aim")
         {
-            Debug.Log("enemy aim");
         }
         else
         {

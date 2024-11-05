@@ -14,8 +14,11 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ITakeDamage hit = collision.gameObject.GetComponent<ITakeDamage>();
-        hit.TakeDamage(strength);
-        //Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            ITakeDamage hit = collision.gameObject.GetComponent<ITakeDamage>();
+            hit.TakeDamage(strength);
+        }
+          
     }
 }
